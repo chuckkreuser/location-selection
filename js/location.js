@@ -67,8 +67,7 @@ myApp.controller('LocationController', ['$scope', function($scope) {
       setStateSelect(state,bSelect);
     });
     
-    if (bSelect) setSelectTotal();
-    else         $scope.selectTotal= 0;  
+    setSelectTotal(); 
   }
   
   // helper: select/unselect displayed locations in state
