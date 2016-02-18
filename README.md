@@ -1,47 +1,25 @@
-# Front End Coding Project
+# Front End Coding Project Submission
 
-**A little context on the problem:**
+Here is my submission for the coding project.
 
-As Earshot has grown the number of locations our customers want to access in a single campaign has grown - a lot. Our prior designs only comtemplated a max of 20 locations. We have a new customer who wants to target 307 7-11 locations in the US. We need to redesign our location selection dialog to support this new use case.
+- Most of the my work is in index.html, location.js, and location.cs.
+- I used a few other libraries: jquery, angular, bootrstrap, fontawesome.
+- For the Google Map, I used something I had written before for my own use. I made slight modifications for this project, but for the most part treated it like a utility library.
+- I added a states.json config for state names.
 
-**Design:**
-
-Our designer was so kind as to provide us with a design for this dialog:
-![location_selection](https://cloud.githubusercontent.com/assets/213594/9950318/f053ed1a-5d7e-11e5-9777-f9a61e6d6ad5.png)
-
-Your challenge is to implement this UI
-
-**General guidelines and requirements:**
-
-- You will need to provide an html file that will display a functioning dialog
-- You can use any JS/CSS framework/3rd party library you'd like to help with this
-- You only need to support the latest version of Chrome on a Mac Book
-- Bonus points if design functions on other browsers/OSes
-- The minimum pixel width that needs to be supported is 320px wide
-- Graphics don't need to match the design exactly
-- If you feel automated testing would help here, feel free to add it
-
-**Features required (in order of priority):**
+A breakdown of the features I implemented.
 
 - All locations are displayed in the dialog
 - Locations grouped by state
-- Search filters locations based on all fields
-- Select All/Deselect All function as expected
-- Clicking "Add" Button displays ids and names of selected locations on page
-- # of selected locations displayed
+- Search filters locations based on all fields (inlcuding full state name) and updates the results in real time.
+- Note: A message is shown if no locations match the search query.
+- Select All/Deselect All select all locations that are currently displayed in the list. 
+- Clicking "Add" Button adds the ID and Name fields to the display of each selected location in the list.
+- # of selected locations displayed. Note: I didn't get to "Show Selected", so I changed the display slightly.
 - Dialog works as a pop up and hosted in page
 - Select All works for a state
-- Ability to expand UI to be 2 columns of states plus the map
-- Ability to expand UI to be 4 columns of states without the map
-- Ability to shrink UI to be a single column of states without a map
 - Selected locations display in a map with a red pin
 - Unselected locations display in a map with a grey pin
-- "Show Selected" zooms map to show all selected locations
+- I didn't get the full column behavior and map mentioned, but I added some responsiveness. From widest to most narrow: two columns and map, one column and map, one column full width.
 
-**In addition to this design, we are giving you:**
-
-- `locations.json` - a file containing 307 locations of 7-11s in the US
-- The same contents of `locations.json` [hosted on S3](https://s3.amazonaws.com/public.earshotinc.com/locations.json). This will allow you to make a request to an actual website to load the data. CORS is enabled on the Bucket for all origins.
-- Unlimited email support :smile:
-
-You will be evaluated primarily on your solution's cleanliness and extensibility. We intend for this task to only take a few hours and would prefer to see clean, well tested, production-worthy code than a complete implementation of every feature. Consider how you would extend your solution to implement additional features. 
+Please let me know if you have any questions, thanks.
