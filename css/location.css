@@ -1,0 +1,104 @@
+
+a { color: black; cursor: pointer; } 
+
+header { padding: 15px 15px 20px 15px; width: 100%; }
+header a { text-decoration: underline; }
+header > div { display: inline-block; }
+header .search-form input { padding: 5px; width: 200px; }
+header .search-actions { float: right; }
+header .search-actions .btn { height: 30px; padding: 0px; width: 100px; border-width: 0px; background-color: #03A9EA; color: #fff; }
+header .search-actions .inactive { background-color: #cccccc; color: #666; } 
+header .search-select { display: inline-block; margin-left: 20px;  }
+header .search-select .select-count { margin-right: 10px; }
+header .search-wrapper { display: inline-block; }
+
+.search-icon {
+  position: relative;
+  left: -30px;
+  color: #888;
+  font-size: 18px !important;
+}
+
+.locations-wrapper {
+  display: inline-block;
+  border: solid 1px #ccc;
+  vertical-align: top;
+  height: 450px;
+  overflow-y: scroll;
+}
+
+.locations {
+  -webkit-columns: 2 200px;
+     -moz-columns: 2 200px;
+          columns: 2 200px;
+-webkit-column-gap: 0em;
+   -moz-column-gap: 0em;
+        column-gap: 0em;
+-webkit-column-rule: 1px solid #ccc;
+     -moz-column-rule: 1px solid #ccc;
+          column-rule: 1px solid #ccc;
+}
+
+.location-state { width: 300px; }
+
+.location-state-name {
+  padding: 10px 20px;
+  background-color: #eee;
+  border-bottom: solid 1px #ccc;
+  font-weight: 500;
+}
+
+.location-state-select { float: right;
+  font-weight: normal;
+  font-size: 12px;
+  padding-top: 2px;
+  color: #888;
+  text-decoration: underline; }
+
+.location-select { font-size: 20px; display: inline-block; vertical-align: top; }
+.location-select input { vertical-align: top; }
+.location-address { display: inline-block; width: 210px; padding-left: 10px; }
+.location-street { font-weight: 500; }
+.location-city { font-size: 11px; }
+
+.location { margin: 0px; padding: 15px; border-bottom: solid 1px #ddd; }
+
+.no-locations {
+  display: inline-block;
+  padding: 10px;
+  width: 300px;
+  word-break: break-all;
+}
+
+.location-map {
+  width: 500px;
+  height: 450px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#gmap { left: -4px; }
+
+@media screen and (max-width: 559px) {
+  header .search-select { margin: 10px 0px; }
+}
+
+@media screen and (max-width: 1150px) {
+  .locations {
+    -webkit-columns: 1 200px;
+       -moz-columns: 1 200px;
+            columns: 1 200px;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .locations-wrapper {
+    height: inherit;
+    overflow-y: inherit;
+    width: 100%;
+  }
+  
+  .location-map { display: none; }
+  .location-state { width: 100%; }
+  .no-locations { width: 100%; }
+}

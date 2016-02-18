@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="mainapp" ng-controller="LocationController">
+<head>
+  <title>Location Selection</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/location.css" rel="stylesheet">
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCH6p5WEjlLx59ylKBsV5VeI8rw31no_H0"></script>
+  <script src="js/infobubble-compiled.js"></script>
+  <script src="js/mapmarkers.js"></script>
+  <script src="js/location.js"></script>
+</head>
+<body>
+  
+  <header>
+  <div class="search-actions">
+    <input type="button" value="Cancel" class="btn details-toggle inactive" ng-click="onShowDetails(false,$event);" />
+    <input type="button" value="Add" class="btn btn-primary details-toggle" ng-click="onShowDetails(true,$event);" />
+  </div>
+    <div class="search-form">
+      <h5>Select Locations</h5>
+      <div class="search-wrapper">
+        <input type="text" id="search" placeholder="Search" ng-change="onSearch(this)" ng-model="searchQuery" />
+        <i class="fa fa-search search-icon"></i>
+      </div>
+      <div class="search-select">
+        <span class="select-count">{{selectTotal}} Selected</span>
+        <a ng-click="setAllSelect(true);">Select all</a> /
+        <a ng-click="setAllSelect(false);">Deselect all</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="locations-wrapper" ng-show="statesDisplayed">
+      <div class="locations">
+        <div class="location-state" ng-repeat="state in states" ng-show="state.displayed">
+          <div class="location-state-name">
+            {{state.name}}
+            <a class="location-state-select" ng-click="onStateSelect(state)">Select all</a>
+          </div>
+          <div class="location" ng-repeat="loc in state.locations" ng-show="loc.displayed">
+            <div class="location-select">
+              <input type="checkbox" ng-checked="loc.selected" ng-click="onLocationSelect(loc)" />
+            </div>
+            <div class="location-address">
+              <div class="location-street">{{loc.address}}</div>
+              <div class="location-city">{{loc.city}}, {{loc.state}}
+                <span ng-show="loc.selected && detailsVisible">
+                  <br>{{loc.id}}
+                  <br>{{loc.name}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="no-locations" ng-hide="statesDisplayed">
+      There are no locations that match "{{searchQuery}}".<br><br>Please try again.
+    </div>
+    <div class="location-map">
+      <div id="gmap"></div>
+    </div>
+  </section>
+</body>
+</html>
